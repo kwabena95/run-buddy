@@ -380,6 +380,59 @@
   .trainer-bio p {
     font-size: 17px;
   }
+
+.trainer-1{
+      background-image: url("/assets/images/trainer-1.jpg");
+      background-size: cover;
+}
+.trainer-2{
+    background-image: url("/assets/images/trainer-2.jpg");
+    background-size: cover;
+}
+.trainer-3{
+    background-image: url("/assets/images/trainer-3.jpg");
+    background-size: cover;
+}
+.trainer-img {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+.trainer-img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(rgba(252, 225, 56, 0.3), var(--secondary-color));
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+.trainer-img h3{
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+.trainer-img h4{
+    font-size: 22px;
+}
+.trainer-img h3,
+.trainer-img h4{
+    z-index: 9999;
+    position: relative;
+    top: 200px;
+    transition: .6s;
+}
+.trainer-img:hover::after{
+    opacity: 1;
+}
+.trainer:hover .trainer-img h3, .trainer:hover .trainer-img h4 {
+    top: 0px;
+}
   /* TRAINER STYLES END */
   
   /* SERVICE STYLES START */
@@ -623,6 +676,9 @@
       writing-mode: unset;
       grid-column: 1 / -1;
       grid-row: -1;
+    }
+    .trainer-img h3, .trainer-img h4, .trainer-img::after{
+        display: none;
     }
   }
   
